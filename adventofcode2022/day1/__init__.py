@@ -58,3 +58,11 @@ if __name__ == "__main__":
     print(f"Answer to Part 1: {max(all_elves)}")
     sort_elves = sorted(all_elves)
     print(f"Answer to Part 2: {sum(sort_elves[-3:])}")
+
+    ## Simplified answer from Python discord all about that input!!!
+    with open("day1.txt", "r") as f:
+        inpt = f.read().split("\n\n")
+
+    a = sorted(map(lambda x: sum(map(int, x.split("\n"))), inpt))
+    print(a[-1])
+    print(a[-1] + a[-2] + a[-3])
