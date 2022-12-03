@@ -3,7 +3,7 @@ from itertools import zip_longest
 import string
 
 
-def read_input(file="day3.txt"):
+def read_input(file="day3.txt") -> list[tuple[str, str]]:
     with open(file, "r") as f:
         data = f.read().splitlines()
     return [(items[: len(items) // 2], items[len(items) // 2 :]) for items in data]
@@ -18,7 +18,7 @@ def value_map(values: list[list[str]]) -> list[int]:
     return [map_value(i) for item in values for i in item]
 
 
-def common(rucksack: tuple[str, str]):
+def common(rucksack: tuple[str, str]) -> list[str]:
     return sorted(set(rucksack[0]) & set(rucksack[1]))
 
 
