@@ -21,27 +21,27 @@ def check_any(lst1: list[int], lst2: list[int]) -> bool:
     return any(item in lst2 for item in lst1)
 
 
-def answer1():
-    data = read_input(file="day4.txt")
+def answer1(file: str):
+    data = read_input(file=file)
     test = []
     for group in data:
         print(group)
         range1 = area_range(group[0])
         range2 = area_range(group[1])
         test.append(check_all(range1, range2))
-    print(test.count(True))
+    return test.count(True)
 
 
-def answer2():
-    data = read_input(file="day4.txt")
+def answer2(file: str):
+    data = read_input(file=file)
     test = []
     for group in data:
         range1 = area_range(group[0])
         range2 = area_range(group[1])
         test.append(check_any(range1, range2))
-    print(test.count(True))
+    return test.count(True)
 
 
 if __name__ == "__main__":
-    print(answer1())
-    print(answer2())
+    print(answer1("day4.txt"))
+    print(answer2("day4.txt"))
