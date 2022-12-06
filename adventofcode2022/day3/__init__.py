@@ -26,9 +26,9 @@ def common_items(data: list[tuple[str, str]]) -> list[list[str]]:
     return [common(rucksack) for rucksack in data]
 
 
-def answer1():
-    data = read_input(file="day3.txt")
-    print(sum(value_map(common_items(data))))
+def answer1(file: str):
+    data = read_input(file=file)
+    return sum(value_map(common_items(data)))
 
 
 def answer2_input(file="day3.txt"):
@@ -48,12 +48,12 @@ def answer2_common(rucksack: tuple[str, str, str]) -> list[str]:
     )
 
 
-def answer2():
-    data = answer2_input(file="day3.txt")
+def answer2(file: str):
+    data = answer2_input(file=file)
     items = [answer2_common(group) for group in data]
-    print(sum(value_map(items)))
+    return sum(value_map(items))
 
 
 if __name__ == "__main__":
-    print(answer1())
-    print(answer2())
+    print(answer1(file="day3.txt"))
+    print(answer2(file="day3.txt"))
