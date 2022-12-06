@@ -10,15 +10,15 @@ if you lose you get 0"""
 # Scissors (3) beats Paper (2)
 
 
-def read_input() -> list[list[str]]:
+def read_input(file: str) -> list[list[str]]:
     """Read in file and return list of strings"""
-    with open("day2.txt", "r") as f:
+    with open(file, "r") as f:
         data = f.read().splitlines()
     return [x.split() for x in data]
 
 
-def answer1() -> int:
-    data = read_input()
+def answer1(file: str) -> int:
+    data = read_input(file)
 
     values = {
         "A": 1,
@@ -51,8 +51,8 @@ def answer1() -> int:
     return sum([score(outcome(i, j), shape(j)) for i, j in data])
 
 
-def answer2() -> int:
-    data = read_input()
+def answer2(file: str) -> int:
+    data = read_input(file)
     values = {
         "A": 1,
         "B": 2,
@@ -88,5 +88,5 @@ def answer2() -> int:
 
 
 if __name__ == "__main__":
-    print(answer1())
-    print(answer2())
+    print(answer1("day2.txt"))
+    print(answer2("day2.txt"))
